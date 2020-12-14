@@ -22,7 +22,10 @@ let package = Package(
             name: "TrustKit",
             dependencies: [],
             path: "TrustKit",            
-            publicHeadersPath: "public"
+            publicHeadersPath: "public",
+            cSettings: [
+                .define("NS_BLOCK_ASSERTIONS", to: "1", .when(configuration: .release))
+            ]
         ),
     ]
 )
